@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Providers;
+namespace AD2018\Providers;
 
 use Illuminate\Support\Facades\Event;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
@@ -13,8 +13,8 @@ class EventServiceProvider extends ServiceProvider
      * @var array
      */
     protected $listen = [
-        'App\Events\Event' => [
-            'App\Listeners\EventListener',
+        'AD2018\Events\Event' => [
+            'AD2018\Listeners\EventListener',
         ],
     ];
 
