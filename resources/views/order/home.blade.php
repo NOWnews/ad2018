@@ -13,8 +13,26 @@
                 <a class="btn btn-primary" href="/order/create" role="button">建立委刊單</a>
             </div>
         </div>
-        <div class="row">
-            000
-        </div>
+        <table class="table">
+            <thead>
+            <tr>
+                {{--<th scope="col">#</th>--}}
+                <th scope="col">委刊單號</th>
+                <th scope="col">名稱</th>
+                <th scope="col">業務</th>
+            </tr>
+            </thead>
+            <tbody>
+            @foreach ($orders as $order)
+                <tr>
+{{--                    <th scope="row">{{ $order->id }}</th>--}}
+                    <td>{{ $order->no }}</td>
+                    <td>
+                        <a href="/order/{{ $order->id }}"> {{ $order->order_name }} </a>
+                    <td>{{ $order->salesperson }}</td>
+                </tr>
+            @endforeach
+            </tbody>
+        </table>
     </div>
 @endsection
