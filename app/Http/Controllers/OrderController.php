@@ -50,8 +50,6 @@ class OrderController extends Controller
         } else {
             $errorMsg = '發生錯誤：'.$result->getMessage();
             return redirect()->back()->withErrors([$errorMsg])->withInput();
-//            return Redirect::route('order.create.form')->with( ['error' => $result] );
-//            return redirect('order/create', ['error' => $result]);TEST002
         }
     }
 }

@@ -10,7 +10,7 @@
 
             </div>
             <div class="col-sm">
-                {{--<a class="btn btn-primary" href="/order/create" role="button">建立委刊單</a>--}}
+                <a class="btn btn-primary" href="/inventory/create" role="button">建立版位</a>
             </div>
         </div>
         <table class="table">
@@ -25,10 +25,7 @@
             <tbody>
             @foreach ($inventories as $inventory)
                 <tr>
-                    {{--                    <th scope="row">{{ $order->id }}</th>--}}
-                    <td>
-                        <a href="/order/{{ $inventory->id }}"> {{ $inventory->name }} </a>
-                    </td>
+                    <td>{{ $inventory->name }}</td>
 
                     <td>{{ $inventory->type }}</td>
                     <td>{{ $inventory->desc }}</td>

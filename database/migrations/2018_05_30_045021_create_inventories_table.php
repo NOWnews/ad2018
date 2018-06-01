@@ -16,8 +16,8 @@ class CreateInventoriesTable extends Migration
         Schema::create('inventories', function (Blueprint $table) {
             $table->increments('id');
             $table->enum('type', ['text', 'image']);
-            $table->string('name');
-            $table->string('desc');
+            $table->string('name')->unique();
+            $table->string('desc')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });
