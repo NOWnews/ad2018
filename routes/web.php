@@ -18,7 +18,8 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/order', 'OrderController@index');
+Route::get('/order', 'OrderController@list');
 Route::get('/order/create', 'OrderController@createView')->name('order.create.form');
 Route::post('/order/create', 'OrderController@createOrder')->name('order.create.post');
 Route::get('/order/{id}', 'OrderController@orderDetail')->name('order.detail');
+Route::get('/inventory', 'InventoryController@list');

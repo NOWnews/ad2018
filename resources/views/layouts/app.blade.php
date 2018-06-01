@@ -51,7 +51,7 @@
                                 <a class="nav-link active" href="#">素材</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link active" href="#">版位</a>
+                                <a class="nav-link active" href="/inventory">版位</a>
                             </li>
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>

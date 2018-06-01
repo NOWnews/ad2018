@@ -20,9 +20,14 @@ class OrderController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Request $request)
+    public function list(Request $request)
     {
-        $orders = Order::find(1)->get();
+        $orders = [];
+        $ordersQuery = Order::find(1);
+        if ($ordersQuery) {
+            $orders = $ordersQuery->get();
+        }
+
         return view('order.home', ['orders' => $orders]);
     }
 

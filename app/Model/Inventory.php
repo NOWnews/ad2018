@@ -4,10 +4,10 @@ namespace AD2018\Model;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Order extends Model
+class Inventory extends Model
 {
 
     protected $fillable = [
-        'no', 'order_name', 'salesperson'
+        'type', 'size', 'name', 'desc'
     ];
 }
