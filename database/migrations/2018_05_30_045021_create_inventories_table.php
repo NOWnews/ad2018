@@ -18,7 +18,6 @@ class CreateInventoriesTable extends Migration
             $table->enum('type', ['text', 'image']);
             $table->string('name');
             $table->string('desc');
-            $table->string('password');
             $table->timestamps();
             $table->softDeletes();
         });
