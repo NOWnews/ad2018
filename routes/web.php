@@ -25,3 +25,4 @@ Route::get('/order/{id}', 'OrderController@orderDetail')->name('order.detail');
 Route::get('/inventory', 'InventoryController@list');
 Route::get('/inventory/create', 'InventoryController@createView')->name('inventory.create.form');
 Route::post('/inventory/create', 'InventoryController@createInventory')->name('inventory.create.post');
+Route::get('/creative', 'CreativeController@list');

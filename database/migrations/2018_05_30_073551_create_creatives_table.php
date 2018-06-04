@@ -15,7 +15,8 @@ class CreateCreativesTable extends Migration
     {
         Schema::create('creatives', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('order_ic');
+            $table->integer('order_id');
+            $table->integer('inventory_id');
             $table->enum('type', ['text', 'image']);
             $table->string('title');
             $table->string('image')->nullable();;
