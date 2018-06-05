@@ -8,6 +8,10 @@ class Order extends Model
 {
 
     protected $fillable = [
-        'no', 'order_name', 'salesperson'
+        'no', 'name', 'salesperson'
     ];
+
+    public function creative() {
+        return $this->hasMany(Creative::class);
+    }
 }

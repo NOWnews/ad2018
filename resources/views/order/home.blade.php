@@ -2,17 +2,15 @@
 
 @section('content')
     <div class="container">
+
         <div class="row">
-            <div class="col-sm">
-
-            </div>
-            <div class="col-sm">
-
-            </div>
             <div class="col-sm">
                 <a class="btn btn-primary" href="/order/create" role="button">建立委刊單</a>
             </div>
         </div>
+
+        <br>
+
         <table class="table">
             <thead>
             <tr>
@@ -28,7 +26,7 @@
 {{--                    <th scope="row">{{ $order->id }}</th>--}}
                     <td>{{ $order->no }}</td>
                     <td>
-                        <a href="/order/{{ $order->id }}"> {{ $order->order_name }} </a>
+                        <a href="/order/{{ $order->id }}"> {{ $order->name }} </a>
                     </td>
                     <td>{{ $order->salesperson }}</td>
                 </tr>

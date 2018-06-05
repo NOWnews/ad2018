@@ -39,7 +39,9 @@ class OrderController extends Controller
     public function orderDetail(Request $request, $id)
     {
         $order = Order::where(['id' => $id])->get()->first();
-        return view('order.detail', ['order' => $order]);
+        $creativeSet = $order->creative()->get();
+        return view('order.detail', ['order' => $order,
+                                            'creativeSet' => $creativeSet]);
     }
 
     public function createOrder(Request $request)

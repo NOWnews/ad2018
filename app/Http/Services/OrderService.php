@@ -14,7 +14,7 @@ class OrderService
     public function createOrder ($param) {
         $order = new Order();
         $order->no = $param['no'];
-        $order->order_name = $param['order_name'];
+        $order->name = $param['order_name'];
         $order->salesperson = $param['salesperson'];
         try{
             $result = $order->save();
