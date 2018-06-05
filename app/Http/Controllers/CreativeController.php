@@ -39,7 +39,7 @@ class CreativeController extends Controller
     }
 
     public function createCreative(Request $request) {
-        $result = $this->creativeService->createCreative($request->input());
+        $result = $this->creativeService->createCreative($request->input(), $request->file('image'));
         if ($result === true) {
             return redirect('order/' . array_get($request->input(), 'orderId'));
         } else {

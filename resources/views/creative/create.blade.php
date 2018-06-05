@@ -15,7 +15,7 @@
                         </div>
                     @endif
                     <div class="card-body">
-                        <form method="POST" action="{{ route('creative.create.post') }}">
+                        <form method="POST" action="{{ route('creative.create.post') }}" enctype="multipart/form-data">
                             @csrf
 
                             <div class="form-group row">
