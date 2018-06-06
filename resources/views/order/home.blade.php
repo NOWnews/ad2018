@@ -18,6 +18,7 @@
                 <th scope="col">委刊單號</th>
                 <th scope="col">名稱</th>
                 <th scope="col">業務</th>
+                <th scope="col">建立日期</th>
             </tr>
             </thead>
             <tbody>
@@ -29,6 +30,7 @@
                         <a href="/order/{{ $order->id }}"> {{ $order->name }} </a>
                     </td>
                     <td>{{ $order->salesperson }}</td>
+                    <td>{{ $order->created_at }}</td>
                 </tr>
             @endforeach
             </tbody>
