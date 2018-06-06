@@ -4,15 +4,18 @@
     <div class="container">
         <div class="row">
             <div class="col-sm">
-
-            </div>
-            <div class="col-sm">
-
-            </div>
-            <div class="col-sm">
                 <a class="btn btn-primary" href="/inventory/create" role="button">建立版位</a>
             </div>
+            <div class="col-sm">
+
+            </div>
+            <div class="col-sm">
+
+            </div>
         </div>
+
+        <br>
+
         <table class="table">
             <thead>
             <tr>
