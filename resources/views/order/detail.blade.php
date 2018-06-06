@@ -3,7 +3,7 @@
 @section('content')
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-md-8">
+            <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">委刊單 <b>{{ $order->order_name }}</b> 細節</div>
                     <div class="card-body">
@@ -30,18 +30,25 @@
                             <thead>
                             <tr>
                                 {{--<th scope="col">#</th>--}}
-                                <th scope="col">版位名稱</th>
+                                <th scope="col">版位</th>
+                                <th scope="col">名稱</th>
                                 <th scope="col">類型</th>
-                                <th scope="col">說明</th>
+                                <th scope="col">狀態</th>
                             </tr>
                             </thead>
                             <tbody>
                             @foreach ($creativeSet as $creative)
                                 <tr>
-                                    <td>{{ $creative->type }}</td>
+                                    <td>{{ $creative->inventory->name }}</td>
 
-                                    <td>{{ $creative->title }}</td>
-                                    <td>{{ $creative->link }}</td>
+                                    <td>{{ $creative->name }}</td>
+                                    <td>{{ $creative->type }}</td>
+                                    @if ($creative->status === 1)
+                                        <td>開啓中</td>
+                                    @else
+                                        <td>關閉中</td>
+                                    @endif
+
                                 </tr>
                             @endforeach
                             </tbody>
