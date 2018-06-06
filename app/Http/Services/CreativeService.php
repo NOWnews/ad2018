@@ -13,10 +13,15 @@ class CreativeService
     }
 
     public function createCreative ($param, $image) {
-        $imagePath = $image->store('public/images');
+        $imagePath = '';
+        if ($image) {
+            $imagePath = $image->store('public/images');
+        }
         $creative = new Creative();
         $creative->order_id = $param['orderId'];
         $creative->inventory_id = $param['inventoryId'];
+        $creative->name = $param['name'];
+        $creative->status = false;
         $creative->type = $param['type'];
         $creative->title = $param['title'];
         $creative->image = Storage::url($imagePath);
