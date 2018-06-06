@@ -41,7 +41,8 @@
                                 <tr>
                                     <td>{{ $creative->inventory->name }}</td>
 
-                                    <td>{{ $creative->name }}</td>
+                                    <td><a href="/creative/{{ $creative->id }}"> {{ $creative->name }} </a>
+
                                     <td>{{ $creative->type }}</td>
                                     @if ($creative->status === 1)
                                         <td>開啓中</td>

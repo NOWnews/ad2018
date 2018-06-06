@@ -21,7 +21,7 @@ class CreativeService
         $creative->order_id = $param['orderId'];
         $creative->inventory_id = $param['inventoryId'];
         $creative->name = $param['name'];
-        $creative->status = false;
+        $creative->status = $param['status'];
         $creative->type = $param['type'];
         $creative->title = $param['title'];
         $creative->image = Storage::url($imagePath);

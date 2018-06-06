@@ -47,4 +47,9 @@ class CreativeController extends Controller
             return redirect()->back()->withErrors([$errorMsg])->withInput();
         }
     }
+
+    public function creativeDetail(Request $request, $id) {
+        $creative = Creative::where(['id' => $id])->get()->first();
+        return view('creative.detail', ['creative' => $creative]);
+    }
 }

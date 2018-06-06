@@ -48,6 +48,24 @@
                             </div>
 
                             <div class="form-group row">
+                                <label for="status" class="col-md-4 col-form-label text-md-right">狀態</label>
+
+                                <div class="col-sm-1">
+                                    <input id="status" type="radio" class="form-control{{ $errors->has('status') ? ' is-invalid' : '' }}" name="status" value=1 required> 開啓
+                                </div>
+
+                                <div class="col-sm-1">
+                                    <input id="status" type="radio" class="form-control{{ $errors->has('status') ? ' is-invalid' : '' }}" name="status" value=0 checked="checked" required> 暫停
+                                </div>
+
+                                @if ($errors->has('status'))
+                                    <span class="invalid-feedback">
+                                    <strong>{{ $errors->first('status') }}</strong>
+                                </span>
+                                @endif
+                            </div>
+
+                            <div class="form-group row">
                                 <label for="inventoryId" class="col-md-4 col-form-label text-md-right">版位</label>
 
                                 <div class="col-md-6">
@@ -68,16 +86,19 @@
                             <div class="form-group row">
                                 <label for="type" class="col-md-4 col-form-label text-md-right">素材類型</label>
 
-                                <div class="col-md-6">
+                                <div class="col-sm-1">
                                     <input id="type" type="radio" class="form-control{{ $errors->has('type') ? ' is-invalid' : '' }}" name="type" value="image" required> 圖片
-                                    <input id="type" type="radio" class="form-control{{ $errors->has('type') ? ' is-invalid' : '' }}" name="type" value="text" required> 文字
-
-                                    @if ($errors->has('type'))
-                                        <span class="invalid-feedback">
-                                        <strong>{{ $errors->first('type') }}</strong>
-                                    </span>
-                                    @endif
                                 </div>
+
+                                <div class="col-sm-1">
+                                    <input id="type" type="radio" class="form-control{{ $errors->has('type') ? ' is-invalid' : '' }}" name="type" value="text" required> 文字
+                                </div>
+
+                                @if ($errors->has('type'))
+                                    <span class="invalid-feedback">
+                                    <strong>{{ $errors->first('type') }}</strong>
+                                </span>
+                                @endif
                             </div>
 
                             <div class="form-group row">
@@ -109,7 +130,7 @@
                             </div>
 
                             <div class="form-group row">
-                                <label for="image" class="col-md-4 col-form-label text-md-right">額外說明</label>
+                                <label for="image" class="col-md-4 col-form-label text-md-right">圖片</label>
 
                                 <div class="col-md-6">
                                     <input id="image" type="file" name="image" accept="image/*">
