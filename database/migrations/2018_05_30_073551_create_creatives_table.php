@@ -18,9 +18,11 @@ class CreateCreativesTable extends Migration
             $table->integer('order_id');
             $table->integer('inventory_id');
             $table->enum('type', ['text', 'image']);
+            $table->string('name');
             $table->string('title');
             $table->string('image')->nullable();;
             $table->string('link');
+            $table->boolean('status');
             $table->timestamps();
         });
     }

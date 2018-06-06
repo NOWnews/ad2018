@@ -10,4 +10,8 @@ class Creative extends Model
     protected $fillable = [
         'type', 'title', 'image', 'link'
     ];
+
+    public function inventory() {
+        return $this->belongsTo(Inventory::class);
+    }
 }
