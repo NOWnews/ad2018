@@ -29,3 +29,5 @@ Route::get('/creative', 'CreativeController@list');
 Route::get('/creative/create/{order_id}', 'CreativeController@createView')->name('creative.create.form');
 Route::post('/creative/create', 'CreativeController@createCreative')->name('creative.create.post');
 Route::get('/creative/{id}', 'CreativeController@creativeDetail')->name('creative.detail');
+Route::post('/queue/create/', 'QueueController@createQueue')->name('queue.create.post');
+Route::get('/queue/delete/{id}', 'QueueController@deleteQueue');

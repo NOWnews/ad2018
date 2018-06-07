@@ -14,4 +14,8 @@ class Creative extends Model
     public function inventory() {
         return $this->belongsTo(Inventory::class);
     }
+
+    public function queues() {
+        return $this->hasMany(Queue::class);
+    }
 }
