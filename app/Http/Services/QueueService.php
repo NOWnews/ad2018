@@ -13,15 +13,16 @@ class QueueService
     }
 
     private function checkDate ($startTime, $endTime) {
-        $endTime = new Carbon($endTime, 'Asia/Taipei');
-        $endTime->addDay(1);
-        $startTime = new Carbon($startTime, 'Asia/Taipei');
         return ($startTime < $endTime);
     }
 
     public function createQueue ($param) {
         $startTime = $param['startTime'];
         $endTime = $param['endTime'];
+        $startTime = new Carbon($startTime, 'Asia/Taipei');
+        $endTime = new Carbon($endTime, 'Asia/Taipei');
+        // 10/10 結束 == 10/11 凌晨 0.0 結束
+        $endTime->addDay(1);
         if ($this->checkDate($startTime, $endTime)) {
             $queue = new Queue();
             $queue->creative_id = $param['creativeId'];
