@@ -52,4 +52,14 @@ class CreativeController extends Controller
         $creative = Creative::where(['id' => $id])->get()->first();
         return view('creative.detail', ['creative' => $creative]);
     }
+
+    public function updateStatus(Request $request, $id, $status) {
+        if ($status === "0") {
+            $this->creativeService->updateStatus($id, false);
+        } else {
+            $this->creativeService->updateStatus($id, true);
+        }
+        return redirect()->back();
+    }
+
 }

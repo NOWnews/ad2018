@@ -34,4 +34,12 @@ class CreativeService
         }
 
     }
+
+    public function updateStatus ($id, $status) {
+        $creative = Creative::where(['id' => $id])->get()->first();
+        $creative->status = $status;
+        return $creative->save();
+    }
+
+
 }
