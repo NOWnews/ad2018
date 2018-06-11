@@ -19,7 +19,7 @@
         <table class="table">
             <thead>
             <tr>
-                {{--<th scope="col">#</th>--}}
+                <th scope="col">#</th>
                 <th scope="col">版位名稱</th>
                 <th scope="col">類型</th>
                 <th scope="col">說明</th>
@@ -29,8 +29,8 @@
             <tbody>
             @foreach ($inventories as $inventory)
                 <tr>
+                    <td>{{ $inventory->id }}</td>
                     <td><a href="/inventory/{{ $inventory->id }}"> {{ $inventory->name }} </a></td>
-
                     <td>{{ $inventory->type }}</td>
                     <td>{{ $inventory->desc }}</td>
                     <td>
