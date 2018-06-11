@@ -32,6 +32,13 @@ class InventoryController extends Controller
         return view('inventory.create');
     }
 
+    public function inventoryDetail(Request $request, $id) {
+        $inventory = Inventory::where(['id' => $id])->get()->first();
+        $queues = $inventory->queues()->get();
+        return view('inventory.detail', ['inventory' => $inventory,
+            'queues' => $queues]);
+    }
+
     public function createInventory(Request $request) {
         $result = $this->inventoryService->createInventry($request->input());
         if ($result === true) {

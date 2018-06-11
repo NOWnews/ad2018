@@ -23,15 +23,24 @@
                 <th scope="col">版位名稱</th>
                 <th scope="col">類型</th>
                 <th scope="col">說明</th>
+                <th scope="col">素材</th>
             </tr>
             </thead>
             <tbody>
             @foreach ($inventories as $inventory)
                 <tr>
-                    <td>{{ $inventory->name }}</td>
+                    <td><a href="/inventory/{{ $inventory->id }}"> {{ $inventory->name }} </a></td>
 
                     <td>{{ $inventory->type }}</td>
                     <td>{{ $inventory->desc }}</td>
+                    <td>
+                        @foreach($inventory->queues as $queue)
+                            @if($queue->end_time >= now())
+                                <a href="/creative/{{ $queue->creative->id }}"> {{ $queue->creative->name }} </a>
+                                 <br>
+                            @endif
+                        @endforeach
+                    </td>
                 </tr>
             @endforeach
             </tbody>
