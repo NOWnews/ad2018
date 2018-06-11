@@ -48,9 +48,6 @@
                                 <a class="nav-link active" href="/order">委刊單</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link active" href="#">素材</a>
-                            </li>
-                            <li class="nav-item">
                                 <a class="nav-link active" href="/inventory">版位</a>
                             </li>
                             <li class="nav-item dropdown">
