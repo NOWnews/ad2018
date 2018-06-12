@@ -37,7 +37,7 @@
                     <td>
                         @foreach($inventory->queues as $queue)
                             @if($queue->end_time >= now())
-                                <a href="/creative/{{ $queue->creative->id }}"> {{ $queue->creative->name }} </a>
+                                <a href="/creative/{{ $queue->creative->id }}"> {{ $queue->creative->name }} ({{ $queue->creative->status ? '開啓中' : '關閉中' }}) </a>
                                  <br>
                             @endif
                         @endforeach

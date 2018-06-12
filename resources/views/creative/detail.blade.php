@@ -20,6 +20,10 @@
                         </div>
 
                         <div>
+                            <label for="name" class="col-md-4 col-form-label text-md-right">狀態</label> {{ $creative->status ? '開啓中' : '關閉中' }}
+                        </div>
+
+                        <div>
                             <label for="link" class="col-md-4 col-form-label text-md-right">版位</label> {{ $creative->inventory->name }}
                         </div>
 
