@@ -2,12 +2,12 @@
 
 namespace AD2018\Http\Controllers;
 
+
 use AD2018\Http\Services\CreativeService;
 use AD2018\Model\Creative;
 use AD2018\Model\Inventory;
 use AD2018\Model\Order;
 use Illuminate\Http\Request;
-
 class CreativeController extends Controller
 {
     public function __construct(CreativeService $creativeService)
@@ -32,7 +32,7 @@ class CreativeController extends Controller
     }
 
     public function createView(Request $request, $orderId) {
-        $order = Order::find($orderId)->get();
+        $order = Order::where(["id" => $orderId])->get();
         $inventories = Inventory::all();
         return view('creative.create', ['order' => $order[0],
                                             'inventories' => $inventories]);
