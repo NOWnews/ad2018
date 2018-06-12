@@ -33,7 +33,8 @@ Route::get('/creative/create/{order_id}', 'CreativeController@createView')->name
 Route::post('/creative/create', 'CreativeController@createCreative')->name('creative.create.post');
 Route::get('/creative/{id}', 'CreativeController@creativeDetail')->name('creative.detail');
 Route::get('creative/{id}/status/{status}', 'CreativeController@updateStatus')->name('creative.status.update');
-//Route::get('creative/{id}/edit', 'CreativeController@editView')->name('creative.edit.form');
+Route::get('creative/{id}/edit', 'CreativeController@editView')->name('creative.edit.form');
+Route::post('creative/{id}', 'CreativeController@updateCreative')->name('creative.edit.post');
 Route::post('/queue/create/', 'QueueController@createQueue')->name('queue.create.post');
 Route::get('/queue/delete/{id}', 'QueueController@deleteQueue');
 // public api

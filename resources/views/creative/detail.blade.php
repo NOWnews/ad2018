@@ -35,7 +35,7 @@
                             <label for="link" class="col-md-4 col-form-label text-md-right">連結</label> {{ $creative->link }}
                         </div>
 
-                        @if($creative->image != "/storage/")
+                        @if($creative->image != "")
                         <div>
                             <label for="image" class="col-md-4 col-form-label text-md-right">圖片</label> <img style="max-width: 300px;" class="img-thumbnail img-fluid" src="{{ $creative->image }}">
                         </div>

@@ -16,6 +16,7 @@ class CreativeService
         $imagePath = '';
         if ($image) {
             $imagePath = $image->store('public/images');
+            $imagePath = Storage::url($imagePath);
         }
         $creative = new Creative();
         $creative->order_id = $param['orderId'];
@@ -24,8 +25,34 @@ class CreativeService
         $creative->status = $param['status'];
         $creative->type = $param['type'];
         $creative->title = $param['title'];
-        $creative->image = Storage::url($imagePath);
+        $creative->image = $imagePath;
         $creative->link = $param['link'];
+        try{
+            $result = $creative->save();
+            return $result;
+        } catch (\Exception $exception) {
+            return $exception;
+        }
+    }
+
+    public function updateCreative ($param, $image) {
+        $imagePath = '';
+        if ($image) {
+            $imagePath = $image->store('public/images');
+            $imagePath = Storage::url($imagePath);
+        }
+        $creative = Creative::where(['id' => $param['id']])->get()->first();
+        $creative->inventory_id = $param['inventoryId'];
+        $creative->name = $param['name'];
+        $creative->status = $param['status'];
+        $creative->type = $param['type'];
+        $creative->title = $param['title'];
+        $creative->link = $param['link'];
+
+        if ($image) {
+            $creative->image = $imagePath;
+        }
+
         try{
             $result = $creative->save();
             return $result;

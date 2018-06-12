@@ -47,7 +47,7 @@
                                         <td>開啓中</td>
                                         <td>
                                             <a href="/creative/{{ $creative->id }}"> 查看細節 </a> /
-                                            {{--<a href="/creative/{{ $creative->id }}/edit"> 編輯 </a> /--}}
+                                            <a href="/creative/{{ $creative->id }}/edit"> 編輯 </a> /
                                             <a href="/creative/{{ $creative->id }}/status/0"> 關閉 </a>
 
                                         </td>
@@ -55,7 +55,7 @@
                                         <td>關閉中</td>
                                         <td>
                                             <a href="/creative/{{ $creative->id }}"> 查看細節 </a> /
-                                            {{--<a href="/creative/{{ $creative->id }}/edit"> 編輯 </a> /--}}
+                                            <a href="/creative/{{ $creative->id }}/edit"> 編輯 </a> /
                                             <a href="/creative/{{ $creative->id }}/status/1"> 開啓 </a>
                                         </td>
                                     @endif

@@ -38,15 +38,27 @@ class CreativeController extends Controller
                                             'inventories' => $inventories]);
     }
 
-//    public function editView(Request $request, $creativeId) {
-//        $creative = $this->creativeService->getCreative($creativeId);
-//        $order = $creative->order;
-//        return view('creative.edit', ['creative' => $creative,
-//                                            'order' => $order]);
-//    }
+    public function editView(Request $request, $creativeId) {
+        $creative = $this->creativeService->getCreative($creativeId);
+        $order = $creative->order;
+        $inventories = Inventory::all();
+        return view('creative.edit', ['creative' => $creative,
+                                            'order' => $order,
+                                            'inventories' => $inventories]);
+    }
 
     public function createCreative(Request $request) {
         $result = $this->creativeService->createCreative($request->input(), $request->file('image'));
+        if ($result === true) {
+            return redirect('order/' . array_get($request->input(), 'orderId'));
+        } else {
+            $errorMsg = '發生錯誤：'.$result->getMessage();
+            return redirect()->back()->withErrors([$errorMsg])->withInput();
+        }
+    }
+
+    public function updateCreative(Request $request) {
+        $result = $this->creativeService->updateCreative($request->input(), $request->file('image'));
         if ($result === true) {
             return redirect('order/' . array_get($request->input(), 'orderId'));
         } else {
