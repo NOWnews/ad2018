@@ -41,5 +41,9 @@ class CreativeService
         return $creative->save();
     }
 
+    public function getCreative ($id) {
+        return $creative = Creative::where(["id" => $id])->get()->first();
+    }
+
 
 }

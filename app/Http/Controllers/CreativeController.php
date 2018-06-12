@@ -38,6 +38,13 @@ class CreativeController extends Controller
                                             'inventories' => $inventories]);
     }
 
+//    public function editView(Request $request, $creativeId) {
+//        $creative = $this->creativeService->getCreative($creativeId);
+//        $order = $creative->order;
+//        return view('creative.edit', ['creative' => $creative,
+//                                            'order' => $order]);
+//    }
+
     public function createCreative(Request $request) {
         $result = $this->creativeService->createCreative($request->input(), $request->file('image'));
         if ($result === true) {
@@ -49,7 +56,7 @@ class CreativeController extends Controller
     }
 
     public function creativeDetail(Request $request, $id) {
-        $creative = Creative::where(['id' => $id])->get()->first();
+        $creative = $this->creativeService->getCreative($id);
         return view('creative.detail', ['creative' => $creative]);
     }
 

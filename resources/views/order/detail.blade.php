@@ -30,24 +30,34 @@
                             <thead>
                             <tr>
                                 {{--<th scope="col">#</th>--}}
-                                <th scope="col">版位</th>
                                 <th scope="col">名稱</th>
+                                <th scope="col">版位</th>
                                 <th scope="col">類型</th>
                                 <th scope="col">狀態</th>
+                                <th scope="col">操作</th>
                             </tr>
                             </thead>
                             <tbody>
                             @foreach ($creativeSet as $creative)
                                 <tr>
+                                    <td>{{ $creative->name }}</td>
                                     <td>{{ $creative->inventory->name }}</td>
-
-                                    <td><a href="/creative/{{ $creative->id }}"> {{ $creative->name }} </a></td>
-
                                     <td>{{ $creative->type }}</td>
                                     @if ($creative->status === 1)
-                                        <td><a href="/creative/{{ $creative->id }}/status/0"> 開啓中 </a></td>
+                                        <td>開啓中</td>
+                                        <td>
+                                            <a href="/creative/{{ $creative->id }}"> 查看細節 </a> /
+                                            {{--<a href="/creative/{{ $creative->id }}/edit"> 編輯 </a> /--}}
+                                            <a href="/creative/{{ $creative->id }}/status/0"> 關閉 </a>
+
+                                        </td>
                                     @else
-                                        <td><a href="/creative/{{ $creative->id }}/status/1"> 關閉中 </a></td>
+                                        <td>關閉中</td>
+                                        <td>
+                                            <a href="/creative/{{ $creative->id }}"> 查看細節 </a> /
+                                            {{--<a href="/creative/{{ $creative->id }}/edit"> 編輯 </a> /--}}
+                                            <a href="/creative/{{ $creative->id }}/status/1"> 開啓 </a>
+                                        </td>
                                     @endif
 
                                 </tr>

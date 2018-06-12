@@ -24,13 +24,14 @@
                 <th scope="col">類型</th>
                 <th scope="col">說明</th>
                 <th scope="col">素材</th>
+                <th scope="col">操作</th>
             </tr>
             </thead>
             <tbody>
             @foreach ($inventories as $inventory)
                 <tr>
                     <td>{{ $inventory->id }}</td>
-                    <td><a href="/inventory/{{ $inventory->id }}"> {{ $inventory->name }} </a></td>
+                    <td>{{ $inventory->name }}</td>
                     <td>{{ $inventory->type }}</td>
                     <td>{{ $inventory->desc }}</td>
                     <td>
@@ -41,6 +42,7 @@
                             @endif
                         @endforeach
                     </td>
+                    <td><a href="/inventory/{{ $inventory->id }}"> 查看細節 </a></td>
                 </tr>
             @endforeach
             </tbody>

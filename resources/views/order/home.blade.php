@@ -19,6 +19,7 @@
                 <th scope="col">名稱</th>
                 <th scope="col">業務</th>
                 <th scope="col">建立日期</th>
+                <th scope="col">操作</th>
             </tr>
             </thead>
             <tbody>
@@ -26,11 +27,12 @@
                 <tr>
 {{--                    <th scope="row">{{ $order->id }}</th>--}}
                     <td>{{ $order->no }}</td>
-                    <td>
-                        <a href="/order/{{ $order->id }}"> {{ $order->name }} </a>
-                    </td>
+                    <td>{{ $order->name }}</td>
                     <td>{{ $order->salesperson }}</td>
                     <td>{{ $order->created_at }}</td>
+                    <td>
+                        <a href="/order/{{ $order->id }}"> 查看細節 </a>
+                    </td>
                 </tr>
             @endforeach
             </tbody>

@@ -18,4 +18,8 @@ class Creative extends Model
     public function queues() {
         return $this->hasMany(Queue::class);
     }
+
+    public function order() {
+        return $this->belongsTo(Order::class);
+    }
 }
