@@ -39,3 +39,20 @@
 - 走期的部分增加到日期與時間 (目前只有日期)
 - 權重 1:1
 - 一個素材 對應 一個版位 對應 一個走期
+
+## TODO
+
+- 編輯委刊單
+
+## Output 規格
+
+{
+    "title": "8���������o�x�Z�@�����K�X�Ӹѯ�",
+    "url": "http://ad1.nownews.com/adclick.php?ownerid=3020&bannerid=36833"
+}
+
+{
+    "title": "���y���W2391-5568",
+    "img": "https://legacy.nownews.com/ad2004/180523-100207-6607js.jpg",
+    "url": "http://ad1.nownews.com/adclick.php?ownerid=3009&bannerid=38078"
+}
