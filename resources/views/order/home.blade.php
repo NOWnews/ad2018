@@ -31,7 +31,8 @@
                     <td>{{ $order->salesperson }}</td>
                     <td>{{ $order->created_at }}</td>
                     <td>
-                        <a href="/order/{{ $order->id }}"> 查看細節 </a>
+                        <a href="/order/{{ $order->id }}"> 查看細節 </a> /
+                        <a href="/order/{{ $order->id }}/edit"> 編輯 </a>
                     </td>
                 </tr>
             @endforeach

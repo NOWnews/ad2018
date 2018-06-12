@@ -36,6 +36,11 @@ class OrderController extends Controller
         return view('order.create');
     }
 
+    public function editView(Request $requestm, $orderId) {
+        $order = $this->orderService->getOrder($orderId);
+        return view('order.edit', ['order' => $order]);
+    }
+
     public function orderDetail(Request $request, $id)
     {
         $order = Order::where(['id' => $id])->get()->first();
@@ -47,6 +52,17 @@ class OrderController extends Controller
     public function createOrder(Request $request)
     {
         $result = $this->orderService->createOrder($request->input());
+        if ($result === true) {
+            return redirect('order');
+        } else {
+            $errorMsg = '發生錯誤：'.$result->getMessage();
+            return redirect()->back()->withErrors([$errorMsg])->withInput();
+        }
+    }
+
+    public function updateOrder(Request $request)
+    {
+        $result = $this->orderService->updateOrder($request->input());
         if ($result === true) {
             return redirect('order');
         } else {

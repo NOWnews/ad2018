@@ -24,4 +24,16 @@ class OrderService
         }
 
     }
+
+    public function updateOrder ($param) {
+        $order = Order::where(["id" => $param['id']])->get()->first();
+        $order->no = $param['no'];
+        $order->name = $param['order_name'];
+        $order->salesperson = $param['salesperson'];
+        return $order->save();
+    }
+
+    public function getOrder ($id) {
+        return Order::where(["id" => $id])->get()->first();
+    }
 }
