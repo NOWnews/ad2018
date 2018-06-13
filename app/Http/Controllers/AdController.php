@@ -16,4 +16,9 @@ class AdController extends Controller
     public function getAd(Request $request, $inventoryId) {
         return $this->adService->getAd($inventoryId);
     }
+
+    public function getAd204(Request $request) {
+        $inventoryId = $request->input("ownerid");
+        return $this->adService->getAd($inventoryId);
+    }
 }

@@ -13,12 +13,26 @@ class AdService
 
     }
 
+    private function adFactory ($creative) {
+        $ad = [
+            "title" => $creative["title"],
+            "url" => $creative["link"],
+        ];
+
+        if ($creative["image"]) {
+            $ad['image'] = $creative["image"];
+        }
+
+        return $ad;
+    }
+
     public function getAd ($inventoryId) {
+
         $inventory = Inventory::where(['id' => $inventoryId])->get()->first();
         $creatives = $inventory->creatives;
         $creative = $creatives->random();
 
-        return $creatives->random();
+        return $this->adFactory($creatives->random());
     }
 
 

@@ -40,4 +40,5 @@ Route::post('creative/{id}', 'CreativeController@updateCreative')->name('creativ
 Route::post('/queue/create/', 'QueueController@createQueue')->name('queue.create.post');
 Route::get('/queue/delete/{id}', 'QueueController@deleteQueue');
 // public api
-Route::get('/ad/{inventoryId}', 'AdController@getAd')->name('home');
+Route::get('/ad/{inventoryId}', 'AdController@getAd');
+Route::get('ads.php', 'AdController@getAd204');
