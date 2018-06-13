@@ -32,7 +32,7 @@
                 <tr>
                     <td>{{ $inventory->id }}</td>
                     <td>{{ $inventory->name }}</td>
-                    <td>{{ $inventory->type }}</td>
+                    <td>{{ ($inventory->type=="text") ? '純文字' : '圖像' }}</td>
                     <td>{{ $inventory->desc }}</td>
                     <td>
                         @foreach($inventory->queues as $queue)
@@ -42,7 +42,10 @@
                             @endif
                         @endforeach
                     </td>
-                    <td><a href="/inventory/{{ $inventory->id }}"> 查看細節 </a></td>
+                    <td>
+                        <a href="/inventory/{{ $inventory->id }}"> 查看細節 </a> /
+                        <a href="/inventory/{{ $inventory->id }}/edit"> 編輯 </a>
+                    </td>
                 </tr>
             @endforeach
             </tbody>

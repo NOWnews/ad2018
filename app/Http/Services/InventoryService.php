@@ -24,4 +24,18 @@ class InventoryService
         }
 
     }
+
+    public function updateInventry ($param) {
+        $inventory = Inventory::where(["id"=> $param['id']])->get()->first();
+        $inventory->name = $param['name'];
+        $inventory->type = $param['type'];
+        $inventory->desc = $param['desc'];
+        try{
+            $result = $inventory->save();
+            return $result;
+        } catch (\Exception $exception) {
+            return $exception;
+        }
+
+    }
 }

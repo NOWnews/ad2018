@@ -32,6 +32,11 @@ class InventoryController extends Controller
         return view('inventory.create');
     }
 
+    public function editView(Request $request, $id) {
+        $inventory = Inventory::where(["id" => $id])->get()->first();
+        return view('inventory.edit', ["inventory" => $inventory]);
+    }
+
     public function inventoryDetail(Request $request, $id) {
         $inventory = Inventory::where(['id' => $id])->get()->first();
         $queues = $inventory->queues()->get();
@@ -41,6 +46,16 @@ class InventoryController extends Controller
 
     public function createInventory(Request $request) {
         $result = $this->inventoryService->createInventry($request->input());
+        if ($result === true) {
+            return redirect('inventory');
+        } else {
+            $errorMsg = '發生錯誤：'.$result->getMessage();
+            return redirect()->back()->withErrors([$errorMsg])->withInput();
+        }
+    }
+
+    public function updateInventory(Request $request) {
+        $result = $this->inventoryService->updateInventry($request->input());
         if ($result === true) {
             return redirect('inventory');
         } else {

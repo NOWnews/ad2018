@@ -42,7 +42,7 @@
                                 <tr>
                                     <td>{{ $creative->name }}</td>
                                     <td>{{ $creative->inventory->name }}</td>
-                                    <td>{{ $creative->type }}</td>
+                                    <td>{{ ($creative->type=="text") ? '純文字' : '圖像' }}</td>
                                     @if ($creative->status === 1)
                                         <td>開啓中</td>
                                         <td>
