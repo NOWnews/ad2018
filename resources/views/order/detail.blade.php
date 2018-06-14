@@ -4,6 +4,9 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-12">
+
+                委刊單 : {{ $order->name }} <br> <br>
+
                 <div class="card">
                     <div class="card-header">委刊單 <b>{{ $order->order_name }}</b> 細節</div>
                     <div class="card-body">

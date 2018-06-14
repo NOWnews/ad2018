@@ -12,6 +12,7 @@
                         </script>
                     </div>
                 @endif
+                    <a href="/order/{{ $creative->order->id }}"> 委刊單 : {{ $creative->order->name }} </a> / 素材 : {{ $creative->name }} <br> <br>
                 <div class="card">
                     <div class="card-header">素材</div>
                     <div class="card-body">
