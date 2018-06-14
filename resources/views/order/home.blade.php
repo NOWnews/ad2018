@@ -11,6 +11,16 @@
 
         <br>
 
+
+        <form class="example" action="order/search/name">
+            <div class="input-group">
+                <input id="keyword" name="keyword" type="text" class="form-control" aria-label="委刊單名稱">
+                <div class="input-group-append">
+                    <button type="submit" class="btn btn-outline-secondary" v-bind:value="keyword">搜尋</button>
+                </div>
+            </div>
+        </form>
+
         <table class="table">
             <thead>
             <tr>

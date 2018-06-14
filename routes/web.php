@@ -24,6 +24,7 @@ Route::post('/order/create', 'OrderController@createOrder')->name('order.create.
 Route::get('/order/{id}', 'OrderController@orderDetail')->name('order.detail');
 Route::get('/order/{id}/edit', 'OrderController@editView')->name('order.edit.form');
 Route::post('/order/{id}', 'OrderController@updateOrder')->name('order.edit.post');
+Route::get('/order/search/name/', 'OrderController@searchOrder');
 Route::get('/inventory', 'InventoryController@list');
 Route::get('/inventory/create', 'InventoryController@createView')->name('inventory.create.form');
 Route::post('/inventory/create', 'InventoryController@createInventory')->name('inventory.create.post');

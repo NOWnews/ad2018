@@ -31,6 +31,18 @@ class OrderController extends Controller
         return view('order.home', ['orders' => $orders]);
     }
 
+    public function searchOrder(Request $request)
+    {
+        $keyword = $request->input("keyword");
+        $orders = [];
+        $ordersQuery = Order::where("name", "like", '%' . $keyword . '%');
+        if ($ordersQuery) {
+            $orders = $ordersQuery->get();
+        }
+
+        return view('order.home', ['orders' => $orders]);
+    }
+
     public function createView(Request $request)
     {
         return view('order.create');
