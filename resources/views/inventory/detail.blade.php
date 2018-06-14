@@ -24,6 +24,7 @@
                             <tr>
                                 {{--<th scope="col">#</th>--}}
                                 <th scope="col">名稱</th>
+                                <th scope="col">委刊單</th>
                                 <th scope="col">開始</th>
                                 <th scope="col">結束</th>
                                 <th scope="col">操作</th>
@@ -33,9 +34,12 @@
                             @foreach ($queues as $queue)
                                 <tr>
                                     <td>{{ $queue->creative->name }}</td>
+                                    <td>{{ $queue->creative->order->name }}</td>
                                     <td>{{ $queue->start_time }}</td>
                                     <td>{{ $queue->end_time }}</td>
-                                    <td><a href="/creative/{{ $queue->creative->id }}"> 查看細節 </a></td>
+                                    <td>
+                                        <a href="/creative/{{ $queue->creative->id }}"> 查看細節 </a>
+                                    </td>
                                 </tr>
                             @endforeach
                             </tbody>

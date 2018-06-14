@@ -17,6 +17,7 @@ class CreateInventoriesTable extends Migration
             $table->increments('id');
             $table->enum('type', ['text', 'image']);
             $table->string('name')->unique();
+            $table->string('position')->nullable();
             $table->string('desc')->nullable();
             $table->timestamps();
             $table->softDeletes();

@@ -41,6 +41,13 @@
                             <label for="image" class="col-md-4 col-form-label text-md-right">圖片</label> <img style="max-width: 300px;" class="img-thumbnail img-fluid" src="{{ $creative->image }}">
                         </div>
                         @endif
+                        <br>
+
+                        <div class="form-group row mb-0">
+                            <div class="col-md-6 offset-md-4">
+                                <a href="/creative/{{ $creative->id }}/edit"> < 編輯 > </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
 

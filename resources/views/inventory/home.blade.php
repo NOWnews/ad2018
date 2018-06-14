@@ -20,7 +20,8 @@
             <thead>
             <tr>
                 <th scope="col">#</th>
-                <th scope="col">版位名稱</th>
+                <th scope="col">位置</th>
+                <th scope="col">名稱</th>
                 <th scope="col">類型</th>
                 <th scope="col">說明</th>
                 <th scope="col">素材</th>
@@ -31,6 +32,7 @@
             @foreach ($inventories as $inventory)
                 <tr>
                     <td>{{ $inventory->id }}</td>
+                    <td>{{ $inventory->position }}</td>
                     <td>{{ $inventory->name }}</td>
                     <td>{{ ($inventory->type=="text") ? '純文字' : '圖像' }}</td>
                     <td>{{ $inventory->desc }}</td>

@@ -13,6 +13,7 @@ class InventoryService
 
     public function createInventry ($param) {
         $inventory = new Inventory();
+        $inventory->position = $param['position'];
         $inventory->name = $param['name'];
         $inventory->type = $param['type'];
         $inventory->desc = $param['desc'];
@@ -27,6 +28,7 @@ class InventoryService
 
     public function updateInventry ($param) {
         $inventory = Inventory::where(["id"=> $param['id']])->get()->first();
+        $inventory->position = $param['position'];
         $inventory->name = $param['name'];
         $inventory->type = $param['type'];
         $inventory->desc = $param['desc'];
