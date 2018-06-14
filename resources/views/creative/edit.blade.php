@@ -89,11 +89,11 @@
                                 <label for="type" class="col-md-4 col-form-label text-md-right">素材類型</label>
 
                                 <div class="col-sm-1">
-                                    <input id="type" type="radio" class="form-control{{ $errors->has('type') ? ' is-invalid' : '' }}" name="type" {{ $creative->typt=="text" ? 'checked' : '' }} value="image" required> 圖片
+                                    <input id="type" type="radio" class="form-control{{ $errors->has('type') ? ' is-invalid' : '' }}" name="type" {{ $creative->type=="text" ? '' : 'checked' }} value="image" required> 圖片
                                 </div>
 
                                 <div class="col-sm-1">
-                                    <input id="type" type="radio" class="form-control{{ $errors->has('type') ? ' is-invalid' : '' }}" name="type" {{ $creative->typt=="text" ? '' : 'checked' }} value="text" required> 文字
+                                    <input id="type" type="radio" class="form-control{{ $errors->has('type') ? ' is-invalid' : '' }}" name="type" {{ $creative->type=="text" ? 'checked' : '' }} value="text" required> 文字
                                 </div>
 
                                 @if ($errors->has('type'))
