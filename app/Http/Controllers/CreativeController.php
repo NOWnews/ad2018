@@ -22,10 +22,9 @@ class CreativeController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function list(Request $request) {
-        $creativieSet = [];
-        $creativieSetQuery = Creative::find(1);
-        if ($creativieSetQuery) {
-            $creativieSet = $creativieSetQuery->get();
+        $creativieSet = Creative::all()->sortByDesc("id");
+        if (!$creativieSet) {
+            $creativieSet = [];
         }
 
         return view('creative.home', ['creativeSet' => $creativieSet]);

@@ -22,10 +22,9 @@ class OrderController extends Controller
      */
     public function list(Request $request)
     {
-        $orders = [];
-        $ordersQuery = Order::find(1);
-        if ($ordersQuery) {
-            $orders = $ordersQuery->get();
+        $orders = Order::all()->sortByDesc("id");
+        if (!$orders) {
+            $orders = [];
         }
 
         return view('order.home', ['orders' => $orders]);
@@ -56,7 +55,7 @@ class OrderController extends Controller
     public function orderDetail(Request $request, $id)
     {
         $order = Order::where(['id' => $id])->get()->first();
-        $creativeSet = $order->creative()->get();
+        $creativeSet = $order->creative()->get()->sortByDesc("id");
         return view('order.detail', ['order' => $order,
                                             'creativeSet' => $creativeSet]);
     }

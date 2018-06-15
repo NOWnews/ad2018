@@ -29,7 +29,16 @@ class AdService
     public function getAd ($inventoryId) {
 
         $inventory = Inventory::where(['id' => $inventoryId])->get()->first();
-        $creatives = $inventory->creatives;
+//        $creatives = $inventory->creatives;
+        $creatives = $inventory->creatives->filter(function ($value) {
+            $res = false;
+            if ($value->status) {
+                dd($value->queues);
+            }
+            return $res;
+        });
+
+        dd($creatives);
         $creative = $creatives->random();
 
         return $this->adFactory($creatives->random());
