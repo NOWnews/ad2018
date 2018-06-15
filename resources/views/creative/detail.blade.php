@@ -45,7 +45,12 @@
 
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
-                                <a href="/creative/{{ $creative->id }}/edit"> < 編輯 > </a>
+                                <a href="/creative/{{ $creative->id }}/edit"> < 編輯 > </a> /
+                                @if ($creative->status === 1)
+                                    <a href="/creative/{{ $creative->id }}/status/0"> < 關閉 > </a>
+                                @else
+                                    <a href="/creative/{{ $creative->id }}/status/1"> < 開啓 > </a>
+                                @endif
                             </div>
                         </div>
                     </div>

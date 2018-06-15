@@ -25,6 +25,7 @@
                                 {{--<th scope="col">#</th>--}}
                                 <th scope="col">名稱</th>
                                 <th scope="col">委刊單</th>
+                                <th scope="col">狀態</th>
                                 <th scope="col">開始</th>
                                 <th scope="col">結束</th>
                                 <th scope="col">操作</th>
@@ -35,6 +36,7 @@
                                 <tr>
                                     <td>{{ $queue->creative->name }}</td>
                                     <td>{{ $queue->creative->order->name }}</td>
+                                    <td>{{ $queue->creative->status ? "開啓中" : "關閉中" }}</td>
                                     <td>{{ $queue->start_time }}</td>
                                     <td>{{ $queue->end_time }}</td>
                                     <td>
