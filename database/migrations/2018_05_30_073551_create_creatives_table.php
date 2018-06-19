@@ -23,6 +23,7 @@ class CreateCreativesTable extends Migration
             $table->string('image')->nullable();;
             $table->string('link');
             $table->boolean('status');
+            $table->softDeletes();
             $table->timestamps();
         });
     }
