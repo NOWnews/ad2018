@@ -4,6 +4,10 @@
 
 取代 AD2004
 
+## 資料庫
+
+- Queue 的 start and end time 使用 "Asia/Taipei" 存入
+
 ## 版位 Inventory 規格
 
 - 類型 type
@@ -42,7 +46,12 @@
 
 ## TODO
 
-- 編輯委刊單
+- 項目排序改爲新到舊(版位從舊到新)
+- 已經排成素材新增狀態顯示
+- 素材 Detail 提供快速開關
+- 21 業助協助資料轉移 / 22 號系統轉移
+
+
 
 ## Output 規格
 
