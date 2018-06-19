@@ -17,20 +17,20 @@ class AdService
 
     private function adFactory ($creative) {
         if ($creative == []) return $creative;
+        $host =request()->getHttpHost();
         $ad = [
             "title" => $creative["title"],
             "url" => $creative["link"],
         ];
 
         if ($creative["image"]) {
-            $ad['image'] = $creative["image"];
+            $ad['image'] = "https://i" . rand(0, 2) . ".wp.com/" . $host . $creative["image"];
         }
 
         return $ad;
     }
 
     public function getAd ($inventoryId) {
-
         $creatives = Cache::get('ads/' . $inventoryId);
 
         if (!$creatives) {
@@ -51,13 +51,17 @@ class AdService
                 return $res;
             });
 
+            $creatives = $creatives->map(function ($creative) {
+                return $this->adFactory($creative);
+            });
+
             Cache::put('ads/' . $inventoryId, $creatives, env('AD_CACHE_TIME', 5));
         }
 
 
         $creative = count($creatives) > 0 ? $creatives->random() : [];
 
-        return $this->adFactory($creative);
+        return $creative;
     }
 
 
