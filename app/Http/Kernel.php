@@ -2,6 +2,7 @@
 
 namespace AD2018\Http;
 
+use AD2018\Http\Middleware\CheckWhitelistIp;
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
 
 class Kernel extends HttpKernel
@@ -59,5 +60,6 @@ class Kernel extends HttpKernel
         'guest' => \AD2018\Http\Middleware\RedirectIfAuthenticated::class,
         'signed' => \Illuminate\Routing\Middleware\ValidateSignature::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
+        'check.ip' => CheckWhitelistIp::class,
     ];
 }
