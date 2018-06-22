@@ -35,7 +35,7 @@ class AdService
 
         if (!$creatives) {
             $inventory = Inventory::where(['id' => $inventoryId])->get()->first();
-            $creatives = $inventory->creatives;
+            $creatives = array_get($inventory, 'creatives', []);
             if ($creatives) {
                 $creatives = $inventory->creatives->filter(function ($value) {
                     $res = false;
