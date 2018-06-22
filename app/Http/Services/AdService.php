@@ -24,7 +24,7 @@ class AdService
         ];
 
         if ($creative["image"]) {
-            $ad['image'] = "https://i" . rand(0, 2) . ".wp.com/" . $host . $creative["image"];
+            $ad['img'] = "https://i" . rand(0, 2) . ".wp.com/" . $host . $creative["image"];
         }
 
         return $ad;
