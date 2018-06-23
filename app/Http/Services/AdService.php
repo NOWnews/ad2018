@@ -31,9 +31,9 @@ class AdService
     }
 
     public function getAd ($inventoryId) {
-        $creatives = Cache::get('ads/' . $inventoryId);
+        $creative = Cache::get('ads/' . $inventoryId);
 
-        if (!$creatives) {
+        if (!$creative) {
             $inventory = Inventory::where(['id' => $inventoryId])->get()->first();
             $creatives = array_get($inventory, 'creatives', []);
             if ($creatives) {
@@ -56,13 +56,15 @@ class AdService
                 $creatives = $creatives->map(function ($creative) {
                     return $this->adFactory($creative);
                 });
+                
+                $creative = count($creatives) > 0 ? $creatives->random() : [];
 
-                Cache::put('ads/' . $inventoryId, $creatives, env('AD_CACHE_TIME', 5));
+                Cache::put('ads/' . $inventoryId, $creative, env('AD_CACHE_TIME', 5));
             }
         }
 
 
-        $creative = count($creatives) > 0 ? $creatives->random() : [];
+        
 
         return $creative;
     }
