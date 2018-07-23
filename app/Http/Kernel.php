@@ -3,6 +3,7 @@
 namespace AD2018\Http;
 
 use AD2018\Http\Middleware\CheckWhitelistIp;
+use AD2018\Http\Middleware\Cors;
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
 
 class Kernel extends HttpKernel
@@ -61,5 +62,6 @@ class Kernel extends HttpKernel
         'signed' => \Illuminate\Routing\Middleware\ValidateSignature::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'check.ip' => CheckWhitelistIp::class,
+        'cors' => Cors::class,
     ];
 }
