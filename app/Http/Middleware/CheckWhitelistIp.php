@@ -7,9 +7,9 @@ use Closure;
 class CheckWhitelistIp
 {
     const WHITELIST_IPS = ['61.219.7.80',
-                           '59.124.89.92',
+        '59.124.89.92',
         '127.0.0.1'
-                          ];
+    ];
     /**
      * Handle an incoming request.
      *
