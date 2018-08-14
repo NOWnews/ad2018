@@ -23,9 +23,9 @@ class AdService
             "url" => $creative["link"],
         ];
 
-        if ($creative["image"]) {
-            $ad['img'] = "https://i" . rand(0, 2) . ".wp.com/" . $host . $creative["image"];
-        }
+//        if ($creative["image"]) {
+//            $ad['img'] = "https://i" . rand(0, 2) . ".wp.com/" . $host . $creative["image"];
+//        }
 
         return $ad;
     }
