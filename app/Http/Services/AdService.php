@@ -24,7 +24,7 @@ class AdService
         ];
 
         if ($creative["image"]) {
-            $ad['img'] = "https://imagelab.nownews.com/?w=100&q=50&src=https://" . $host . $creative["image"];
+            $ad['img'] = "https://imagelab.nownews.com/?w=220&q=80&src=https://" . $host . $creative["image"];
         }
 
         return $ad;
