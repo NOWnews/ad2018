@@ -17,6 +17,11 @@ class AdController extends Controller
         return response()->json($this->adService->getAd($inventoryId), 200, [], JSON_UNESCAPED_SLASHES);
     }
 
+    public function getAds(Request $request, $inventoryIds) {
+        $inventoryIds = explode(",",$inventoryIds);
+        return response()->json($this->adService->getAds($inventoryIds), 200, [], JSON_UNESCAPED_SLASHES);
+    }
+
     public function getAd204(Request $request) {
         $inventoryId = $request->input("ownerid");
         return $this->adService->getAd($inventoryId);

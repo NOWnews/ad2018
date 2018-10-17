@@ -42,3 +42,4 @@ Route::post('/queue/create/', 'QueueController@createQueue')->middleware('check.
 Route::get('/queue/delete/{id}', 'QueueController@deleteQueue')->middleware('check.ip');
 // public api
 Route::get('/ad/{inventoryId}', 'AdController@getAd');
+Route::get('/ads/{inventoryId}', 'AdController@getAds');

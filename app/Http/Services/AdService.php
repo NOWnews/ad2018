@@ -63,11 +63,15 @@ class AdService
             }
         }
 
-
-        
-
         return $creative;
     }
 
+    public function getAds ($inventoryIds) {
+        $creatives = [];
+        foreach ($inventoryIds as $inventoryId){
+            $creatives[$inventoryId] = $this->getAd($inventoryId);
+        }
+        return $creatives;
+    }
 
 }
