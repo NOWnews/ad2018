@@ -59,7 +59,7 @@ class AdService
                 
                 $creative = count($creatives) > 0 ? $creatives->random() : [];
 
-                Cache::put('ads/' . $inventoryId, $creative, env('AD_CACHE_TIME', 5));
+                Cache::put('ads/' . $inventoryId, $creative, env('AD_CACHE_TIME', 30));
             }
         }
 
