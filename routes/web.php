@@ -40,3 +40,6 @@ Route::get('creative/{id}/edit', 'CreativeController@editView')->middleware('che
 Route::post('creative/{id}', 'CreativeController@updateCreative')->middleware('check.ip')->name('creative.edit.post');
 Route::post('/queue/create/', 'QueueController@createQueue')->middleware('check.ip')->name('queue.create.post');
 Route::get('/queue/delete/{id}', 'QueueController@deleteQueue')->middleware('check.ip');
+// public api
+//Route::get('/ad/{inventoryId}', 'AdController@getAd');
+//Route::get('/ads/{inventoryId}', 'AdController@getAds');

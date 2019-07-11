@@ -39,7 +39,7 @@ class RouteServiceProvider extends ServiceProvider
 
         $this->mapWebRoutes();
 
-        $this->mapPublicRoutes();
+	$this->mapPublicRoutes();
 
         //
     }
@@ -75,7 +75,8 @@ class RouteServiceProvider extends ServiceProvider
 
     protected function mapPublicRoutes()
     {
-        Route::namespace($this->namespace)
+        Route::middleware('cors')
+            ->namespace($this->namespace)
             ->group(base_path('routes/public.php'));
     }
 }

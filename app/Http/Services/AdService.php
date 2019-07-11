@@ -63,6 +63,9 @@ class AdService
             }
         }
 
+
+        
+
         return $creative;
     }
 
