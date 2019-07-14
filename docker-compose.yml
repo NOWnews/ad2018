@@ -1,0 +1,36 @@
+version: "2"
+services:
+  nginx:
+    build: ./build/nginx
+    ports:
+      - "80:80"
+    links:
+    - php72_fpm
+    volumes:
+      - ./:/var/www/html
+    environment:
+      - VIRTUAL_HOST=dev.ad2018
+
+  php72_fpm:
+    build: ./build/php72
+    ports:
+      - "9000:9000"
+    volumes:
+      - ./:/var/www/html
+    links:
+      - redis
+
+  mysql:
+    build: ./build/mysql
+    ports:
+      - "3306:3306"
+    environment:
+      - MYSQL_ROOT_PASSWORD=123456
+      - MYSQL_USER=${DB_USERNAME}
+      - MYSQL_PASSWORD=${DB_PASSWORD}
+      - MYSQL_DATABASE=${DB_DATABASE}
+
+  redis:
+    build: ./build/redis
+    ports:
+      - "6379:6379"
