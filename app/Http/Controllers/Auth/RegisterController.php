@@ -78,7 +78,7 @@ class RegisterController extends Controller
         ];
 
         if (!in_array($userEmail, $allowEmails)) {
-            return view('home');
+            return redirect('home');
         }
 
         return view('auth.register');
