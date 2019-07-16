@@ -75,6 +75,9 @@ class RegisterController extends Controller
         $userEmail = auth()->user()->email;
         $allowEmails = [
             'jiaing@nownews.com',
+            'david.tung@nownews.com',
+            'carrie1929@nownews.com',
+            'ClareTsai@nownews.com',
         ];
 
         if (!in_array($userEmail, $allowEmails)) {
